@@ -20,5 +20,8 @@ interface NotesDAO {
     //Room provides data in the form of live data
 
     @Query("Select * from notes_table")
-    fun fetchAll(): LiveData<NoteModel>
+    fun fetchAllNotes(): LiveData<NoteModel>
+
+    @Query("delete from notes_table")
+    fun deleteAllNotes()
 }
