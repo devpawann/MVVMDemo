@@ -1,19 +1,21 @@
 package com.pawan.notemvvm.db
 
 import android.content.Context
-import androidx.room.Database
-import androidx.room.Room
-import androidx.room.RoomDatabase
+import androidx.room.*
+import androidx.sqlite.db.SupportSQLiteOpenHelper
 
 @Database(entities = [NoteModel::class], version = 1)
 abstract class NotesDatabase : RoomDatabase() {
     abstract val notesDao: NotesDAO
 
     //To use singleton pattern
+    //TODO Use Object to reduce this boilerplate code
     companion object {
         @Volatile
         private var INSTANCE: NotesDatabase? = null
         fun getInstance(context: Context): NotesDatabase {
+
+            //Synchronized will help to make sure no two thread can access this at a time
             synchronized(this) {
                 var instance = INSTANCE
                 if (instance == null) {
@@ -30,3 +32,4 @@ abstract class NotesDatabase : RoomDatabase() {
         }
     }
 }
+

@@ -6,7 +6,7 @@
     <data>
 
         <variable
-            name="viewModel"
+            name="noteVieModel"
             type="com.pawan.notemvvm.NotesViewModel" />
 
     </data>
@@ -28,7 +28,7 @@
             android:ems="10"
             android:hint="@string/title"
             android:inputType="textPersonName"
-            android:text="@={viewModel.noteTitle}"
+            android:text="@={noteVieModel.noteTitle}"
             android:textColor="@color/black" />
 
         <EditText
@@ -41,7 +41,7 @@
             android:ems="10"
             android:hint="@string/body"
             android:inputType="textPersonName"
-            android:text="@={viewModel.noteBody}"
+            android:text="@={noteVieModel.noteBody}"
             android:textColor="@color/black" />
 
         <LinearLayout
@@ -54,24 +54,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:onClick="@{()->viewModel.saveOrUpdateNote()}"
-                android:text="@={viewModel.saveOrUpdateBtn}" />
+                android:onClick="@{()->noteVieModel.saveOrUpdateNote()}"
+                android:text="@={noteVieModel.saveOrUpdateBtn}" />
 
             <Button
                 android:id="@+id/btn_ClearField"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:onClick="@{()->viewModel.deleteOrClear()}"
-                android:text="@={viewModel.deleteOrClearBtn}" />
+                android:onClick="@{()->noteVieModel.deleteOrClear()}"
+                android:text="@={noteVieModel.deleteOrClearBtn}" />
 
             <Button
                 android:id="@+id/btn_DeleteAllNotes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:onClick="@{()->viewModel.deleteAllNotes()}"
-                android:text="@={viewModel.deleteAllBtn}" />
+                android:onClick="@{()->noteVieModel.deleteAllNotes()}"
+                android:text="@={noteVieModel.deleteAllBtn}" />
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
