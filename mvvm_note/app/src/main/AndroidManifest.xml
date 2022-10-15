@@ -3,14 +3,19 @@
     package="com.pawan.mvvm_note">
 
     <application
+        android:name=".NoteApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Mvvm_note">
+
+        <meta-data android:name="io.sentry.dsn" android:value="https://24b3ddcdb5f641298450dfb42ce6acb0@o1110672.ingest.sentry.io/6139817" />
+        <meta-data android:name="io.sentry.traces.sample-rate" android:value="1.0" />
+
         <activity
-            android:name=".MainActivity"
+            android:name=".feature_note.presentation.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
